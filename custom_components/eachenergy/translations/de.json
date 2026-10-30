@@ -13,10 +13,208 @@
         }
       }
     },
-    "error": { "cannot_connect": "Keine Antwort vom Wechselrichter. IP, Seriennummer und Adresse prüfen." },
-    "abort": { "already_configured": "Dieser Wechselrichter ist bereits eingerichtet." }
+    "error": {
+      "cannot_connect": "Keine Antwort vom Wechselrichter. IP, Seriennummer und Adresse prüfen."
+    },
+    "abort": {
+      "already_configured": "Dieser Wechselrichter ist bereits eingerichtet."
+    }
   },
   "options": {
-    "step": { "init": { "data": { "scan_interval": "Abfrageintervall (Sekunden)" } } }
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Abfrageintervall (Sekunden)"
+        }
+      }
+    }
+  },
+  "device": {
+    "inverter": {
+      "name": "Each Energy Wechselrichter"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "inverter_state": {
+        "name": "Betriebsstatus",
+        "state": {
+          "ready": "Bereit",
+          "running": "Betrieb",
+          "warning": "Warnung",
+          "fault": "Schwerer Fehler",
+          "updating": "Update",
+          "off_grid": "Inselbetrieb",
+          "ac_coupling": "AC-Kopplung",
+          "other": "Unbekannt"
+        }
+      },
+      "inverter_temperature": {
+        "name": "Innentemperatur"
+      },
+      "heatsink_temperature": {
+        "name": "Kühlkörpertemperatur"
+      },
+      "iso": {
+        "name": "Isolationswiderstand"
+      },
+      "output_limit": {
+        "name": "Ausgangsleistung Freigabe"
+      },
+      "warning_code": {
+        "name": "Warncode"
+      },
+      "error_code": {
+        "name": "Fehlercode"
+      },
+      "pv_power": {
+        "name": "PV-Leistung"
+      },
+      "pv1_voltage": {
+        "name": "PV1 Spannung"
+      },
+      "pv2_voltage": {
+        "name": "PV2 Spannung"
+      },
+      "pv3_voltage": {
+        "name": "PV3 Spannung"
+      },
+      "pv1_current": {
+        "name": "PV1 Strom"
+      },
+      "pv2_current": {
+        "name": "PV2 Strom"
+      },
+      "pv3_current": {
+        "name": "PV3 Strom"
+      },
+      "pv1_power": {
+        "name": "PV1 Leistung"
+      },
+      "pv2_power": {
+        "name": "PV2 Leistung"
+      },
+      "pv3_power": {
+        "name": "PV3 Leistung"
+      },
+      "pv_energy_today": {
+        "name": "PV-Ertrag heute"
+      },
+      "pv_energy_total": {
+        "name": "PV-Ertrag gesamt"
+      },
+      "grid_power": {
+        "name": "Netzleistung"
+      },
+      "grid_power_l1": {
+        "name": "Netzleistung L1"
+      },
+      "grid_power_l2": {
+        "name": "Netzleistung L2"
+      },
+      "grid_power_l3": {
+        "name": "Netzleistung L3"
+      },
+      "grid_import_power": {
+        "name": "Netzbezug"
+      },
+      "grid_import_today": {
+        "name": "Netzbezug heute"
+      },
+      "grid_import_total": {
+        "name": "Netzbezug gesamt"
+      },
+      "grid_export_today": {
+        "name": "Einspeisung heute"
+      },
+      "grid_export_total": {
+        "name": "Einspeisung gesamt"
+      },
+      "ac_voltage_l1": {
+        "name": "Netzspannung L1"
+      },
+      "ac_voltage_l2": {
+        "name": "Netzspannung L2"
+      },
+      "ac_voltage_l3": {
+        "name": "Netzspannung L3"
+      },
+      "ac_current_l1": {
+        "name": "Wechselrichter Strom L1"
+      },
+      "ac_current_l2": {
+        "name": "Wechselrichter Strom L2"
+      },
+      "ac_current_l3": {
+        "name": "Wechselrichter Strom L3"
+      },
+      "grid_frequency": {
+        "name": "Netzfrequenz"
+      },
+      "load_power": {
+        "name": "Hausverbrauch"
+      },
+      "load_power_l1": {
+        "name": "Hausverbrauch L1"
+      },
+      "load_power_l2": {
+        "name": "Hausverbrauch L2"
+      },
+      "load_power_l3": {
+        "name": "Hausverbrauch L3"
+      },
+      "load_energy_today": {
+        "name": "Hausverbrauch heute"
+      },
+      "load_energy_total": {
+        "name": "Hausverbrauch gesamt"
+      },
+      "battery_state": {
+        "name": "Batteriestatus",
+        "state": {
+          "idle": "Ruhezustand",
+          "charging": "Laden",
+          "discharging": "Entladen",
+          "standby": "Standby",
+          "no_battery": "Keine Batterie"
+        }
+      },
+      "battery_soc": {
+        "name": "Batterie Ladezustand"
+      },
+      "battery_power": {
+        "name": "Batterieleistung"
+      },
+      "battery_voltage": {
+        "name": "Batteriespannung"
+      },
+      "battery_current": {
+        "name": "Batteriestrom"
+      },
+      "battery_temperature": {
+        "name": "Batterietemperatur"
+      },
+      "battery_soh": {
+        "name": "Batterie SOH"
+      },
+      "battery_cycles": {
+        "name": "Batterie Zyklen"
+      },
+      "battery_charge_today": {
+        "name": "Batterie geladen heute"
+      },
+      "battery_discharge_today": {
+        "name": "Batterie entladen heute"
+      },
+      "battery_charge_total": {
+        "name": "Batterie geladen gesamt"
+      },
+      "battery_discharge_total": {
+        "name": "Batterie entladen gesamt"
+      },
+      "backup_power": {
+        "name": "Backup-Ausgang Leistung"
+      }
+    }
   }
 }

@@ -2,21 +2,219 @@
   "config": {
     "step": {
       "user": {
-        "title": "Each Energy Wechselrichter",
-        "description": "Lokale Verbindung über den SOLARMAN-Stick (nur lesend).",
+        "title": "Each Energy inverter",
+        "description": "Local connection via the SOLARMAN stick logger (read-only).",
         "data": {
-          "host": "IP-Adresse des Loggers",
+          "host": "Logger IP address",
           "port": "Port",
-          "logger_serial": "Seriennummer des Loggers",
-          "address": "Geräteadresse des Wechselrichters",
-          "scan_interval": "Abfrageintervall (Sekunden)"
+          "logger_serial": "Logger serial number",
+          "address": "Inverter device address",
+          "scan_interval": "Polling interval (seconds)"
         }
       }
     },
-    "error": { "cannot_connect": "Keine Antwort vom Wechselrichter. IP, Seriennummer und Adresse prüfen." },
-    "abort": { "already_configured": "Dieser Wechselrichter ist bereits eingerichtet." }
+    "error": {
+      "cannot_connect": "No response from the inverter. Check IP, logger serial number and address."
+    },
+    "abort": {
+      "already_configured": "This inverter is already configured."
+    }
   },
   "options": {
-    "step": { "init": { "data": { "scan_interval": "Abfrageintervall (Sekunden)" } } }
+    "step": {
+      "init": {
+        "data": {
+          "scan_interval": "Polling interval (seconds)"
+        }
+      }
+    }
+  },
+  "device": {
+    "inverter": {
+      "name": "Each Energy inverter"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "inverter_state": {
+        "name": "Operating state",
+        "state": {
+          "ready": "Ready",
+          "running": "Running",
+          "warning": "Warning",
+          "fault": "Fault",
+          "updating": "Updating",
+          "off_grid": "Off-grid (backup)",
+          "ac_coupling": "AC coupling",
+          "other": "Other"
+        }
+      },
+      "inverter_temperature": {
+        "name": "Internal temperature"
+      },
+      "heatsink_temperature": {
+        "name": "Heatsink temperature"
+      },
+      "iso": {
+        "name": "Insulation resistance"
+      },
+      "output_limit": {
+        "name": "Output power limit"
+      },
+      "warning_code": {
+        "name": "Warning code"
+      },
+      "error_code": {
+        "name": "Error code"
+      },
+      "pv_power": {
+        "name": "PV power"
+      },
+      "pv_energy_today": {
+        "name": "PV yield today"
+      },
+      "pv_energy_total": {
+        "name": "PV yield total"
+      },
+      "grid_power": {
+        "name": "Grid power"
+      },
+      "grid_import_power": {
+        "name": "Grid import power"
+      },
+      "grid_import_today": {
+        "name": "Grid import today"
+      },
+      "grid_import_total": {
+        "name": "Grid import total"
+      },
+      "grid_export_today": {
+        "name": "Grid export today"
+      },
+      "grid_export_total": {
+        "name": "Grid export total"
+      },
+      "grid_frequency": {
+        "name": "Grid frequency"
+      },
+      "load_power": {
+        "name": "House load"
+      },
+      "load_energy_today": {
+        "name": "House consumption today"
+      },
+      "load_energy_total": {
+        "name": "House consumption total"
+      },
+      "battery_state": {
+        "name": "Battery state",
+        "state": {
+          "idle": "Idle",
+          "charging": "Charging",
+          "discharging": "Discharging",
+          "standby": "Standby",
+          "no_battery": "No battery"
+        }
+      },
+      "battery_soc": {
+        "name": "Battery state of charge"
+      },
+      "battery_power": {
+        "name": "Battery power"
+      },
+      "battery_voltage": {
+        "name": "Battery voltage"
+      },
+      "battery_current": {
+        "name": "Battery current"
+      },
+      "battery_temperature": {
+        "name": "Battery temperature"
+      },
+      "battery_soh": {
+        "name": "Battery state of health"
+      },
+      "battery_cycles": {
+        "name": "Battery cycles"
+      },
+      "battery_charge_today": {
+        "name": "Battery charged today"
+      },
+      "battery_discharge_today": {
+        "name": "Battery discharged today"
+      },
+      "battery_charge_total": {
+        "name": "Battery charged total"
+      },
+      "battery_discharge_total": {
+        "name": "Battery discharged total"
+      },
+      "backup_power": {
+        "name": "Backup output power"
+      },
+      "pv1_voltage": {
+        "name": "PV1 voltage"
+      },
+      "pv1_current": {
+        "name": "PV1 current"
+      },
+      "pv1_power": {
+        "name": "PV1 power"
+      },
+      "grid_power_l1": {
+        "name": "Grid power L1"
+      },
+      "ac_voltage_l1": {
+        "name": "Grid voltage L1"
+      },
+      "ac_current_l1": {
+        "name": "Inverter current L1"
+      },
+      "load_power_l1": {
+        "name": "House load L1"
+      },
+      "pv2_voltage": {
+        "name": "PV2 voltage"
+      },
+      "pv2_current": {
+        "name": "PV2 current"
+      },
+      "pv2_power": {
+        "name": "PV2 power"
+      },
+      "grid_power_l2": {
+        "name": "Grid power L2"
+      },
+      "ac_voltage_l2": {
+        "name": "Grid voltage L2"
+      },
+      "ac_current_l2": {
+        "name": "Inverter current L2"
+      },
+      "load_power_l2": {
+        "name": "House load L2"
+      },
+      "pv3_voltage": {
+        "name": "PV3 voltage"
+      },
+      "pv3_current": {
+        "name": "PV3 current"
+      },
+      "pv3_power": {
+        "name": "PV3 power"
+      },
+      "grid_power_l3": {
+        "name": "Grid power L3"
+      },
+      "ac_voltage_l3": {
+        "name": "Grid voltage L3"
+      },
+      "ac_current_l3": {
+        "name": "Inverter current L3"
+      },
+      "load_power_l3": {
+        "name": "House load L3"
+      }
+    }
   }
 }
