@@ -1,4 +1,4 @@
-# Each Energy (lokal) – Home Assistant
+# Each Energy (local) – Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/)
 [![Validate](https://github.com/patsch29/ha-eachenergy/actions/workflows/validate.yml/badge.svg)](https://github.com/patsch29/ha-eachenergy/actions/workflows/validate.yml)
@@ -38,7 +38,7 @@ Andere Modelle der Serie nutzen sehr wahrscheinlich dasselbe Protokoll. Rückmel
 
 1. HACS → Menü (⋮) → **Benutzerdefinierte Repositories**
 2. URL `https://github.com/patsch29/ha-eachenergy`, Typ **Integration** hinzufügen
-3. „Each Energy (lokal)“ installieren und Home Assistant neu starten
+3. „Each Energy (local)“ installieren und Home Assistant neu starten
 
 ### Manuell
 
@@ -46,7 +46,7 @@ Ordner `custom_components/eachenergy` nach `/config/custom_components/eachenergy
 
 ## Einrichtung
 
-Einstellungen → Geräte & Dienste → **Integration hinzufügen** → „Each Energy (lokal)“
+Einstellungen → Geräte & Dienste → **Integration hinzufügen** → „Each Energy (local)“
 
 | Feld | Bedeutung |
 |---|---|
@@ -60,7 +60,12 @@ Einstellungen → Geräte & Dienste → **Integration hinzufügen** → „Each 
 
 - Der Stick bedient nur wenige gleichzeitige Verbindungen. Andere lokale Abfragen (z. B. eine zusätzliche Solarman-Integration) sollten deaktiviert sein.
 - Die Solarman-App/Cloud funktioniert parallel weiter.
-- Sensornamen sind derzeit deutsch.
+- Sensornamen und Statuswerte erscheinen in der Sprache von Home Assistant (Deutsch und Englisch, weitere Sprachen gern per Pull Request).
+- Ab Version 0.2.0 liefern die Sensoren *Betriebsstatus* und *Batteriestatus* intern englische Schlüssel (z. B. `running`, `charging`). Angezeigt wird weiterhin der übersetzte Text; Automationen, die auf die alten deutschen Werte (`Betrieb`, `Laden` …) prüfen, müssen angepasst werden.
+
+## Fehler melden
+
+Bitte unter Einstellungen → Geräte & Dienste → Each Energy → ⋮ → **Diagnose herunterladen** die Diagnosedatei an das [Issue](https://github.com/patsch29/ha-eachenergy/issues) anhängen. IP-Adresse und Seriennummern sind darin automatisch entfernt; enthalten sind nur die Rohantworten des Wechselrichters.
 
 ## Mitmachen
 
@@ -83,9 +88,9 @@ Each Energy inverters do **not** speak Modbus through the stick; they use a prop
 
 **Install:** HACS → Custom repositories → `https://github.com/patsch29/ha-eachenergy` (type *Integration*) → install → restart. Or copy `custom_components/eachenergy` manually.
 
-**Configure:** Settings → Devices & services → Add integration → "Each Energy (lokal)". Enter the logger IP, port `8899`, the **logger** serial number (10 digits, not the inverter serial), device address `1`.
+**Configure:** Settings → Devices & services → Add integration → "Each Energy (local)". Enter the logger IP, port `8899`, the **logger** serial number (10 digits, not the inverter serial), device address `1`.
 
-**Tested:** PHT12K-M1-25A with LSW-5 logger. Reports for other models are very welcome via issues. Sensor names are currently German.
+**Tested:** PHT12K-M1-25A with LSW-5 logger. Reports for other models are very welcome via issues – please attach the diagnostics download (IP and serials are redacted). Entity names are translated (English, German). Since 0.2.0 the state sensors use English keys (`running`, `charging`, …).
 
 ## Lizenz / License
 
