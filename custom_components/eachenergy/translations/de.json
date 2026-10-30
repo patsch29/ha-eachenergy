@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Each Energy Wechselrichter",
+        "description": "Lokale Verbindung über den SOLARMAN-Stick (nur lesend).",
+        "data": {
+          "host": "IP-Adresse des Loggers",
+          "port": "Port",
+          "logger_serial": "Seriennummer des Loggers",
+          "address": "Geräteadresse des Wechselrichters",
+          "scan_interval": "Abfrageintervall (Sekunden)"
+        }
+      }
+    },
+    "error": { "cannot_connect": "Keine Antwort vom Wechselrichter. IP, Seriennummer und Adresse prüfen." },
+    "abort": { "already_configured": "Dieser Wechselrichter ist bereits eingerichtet." }
+  },
+  "options": {
+    "step": { "init": { "data": { "scan_interval": "Abfrageintervall (Sekunden)" } } }
+  }
+}
